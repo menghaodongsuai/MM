@@ -4,23 +4,29 @@
 #include<string.h>
 int main()
 {
-  char str[456]; 
-  char b;
-  int number=0;
-  int i=0;
-  printf("请输入句子");
-  gets(str)	;
-  strlwr(str);
-  printf("请输入句子中某个单词");
-  scanf("%c",&b);
-  for(i;i<=456;i++)
-  {
-  	if(b==str[i])
-  	{
-	    number++;
-    }
-  }
-  printf("%d",number);
-  return 0;
+	printf("请输入一个句");
+	char str[200];
+	gets(str);
+	printf("请输入一个词");
+	char w[10];
+	gets(w);
+	strlwr(str);
+	strlwr(w);
+	int a=strlen(w);
+	int b=strlen(str);
+	int c=0;
+	for(int i=0;i<=b-a;i++)
+	{
+		char tempw[a+1];
+		
+		for(int j=0;j<a;j++)  
+		     tempw[j]=str[i+j];
+		if(strcmp(tempw,w)==0) 
+		          c++;
+
+	}
+	printf("%d",c);
+	return 0;
 }
+
 
